@@ -80,6 +80,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
 }
 
+h1{
+
+    font-weight: bold;
+    font-size: 100px
+
+}
 p {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -572,6 +578,7 @@ pre code {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    background-color: rgb(224, 221, 221);
 }
 
 .no-gutters {
@@ -594,6 +601,7 @@ pre code {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    color: black;
 }
 
 .col {
@@ -3977,7 +3985,8 @@ input[type=button].btn-block {
     padding-top: 0.32rem;
     padding-bottom: 0.32rem;
     margin-right: 1rem;
-    font-size: 1.125rem;
+    font-size: 40px;
+    font-weight: bold;
     line-height: inherit;
     white-space: nowrap;
 }
@@ -10024,4 +10033,8 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 0 5px;
     color: #ccc;
     content: "/ ";
+}
+
+ul{
+    color: black;
 }
