@@ -16,6 +16,7 @@
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.home_alt') }}"
                        alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
+
                 {{ $breadcrumb ?? '' }}
             </ul>
 
@@ -27,8 +28,16 @@
 
             <ul class="breadcrumb">
                 <li>
-					<a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a>
+					<a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }} </a>
 				</li>
+                <li><a href="/" title="{{ __('misc.contact_alt') }}"
+                       alt="{{ __('misc.contact_alt') }}">{{ __('contact') }}</a></li>
+
+                <li><a href="/" title="{{ __('misc.over ons_alt') }}"
+                       alt="{{ __('misc.cover ons_alt') }}">{{ __('over ons') }}</a></li>
+
+                <li><a href="/" title="{{ __('misc.social media_alt') }}"
+                       alt="{{ __('misc.social media_alt') }}">{{ __('social media') }}</a></li>
                 {{ $breadcrumb ?? '' }}
             </ul>
 
