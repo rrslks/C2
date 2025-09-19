@@ -27,17 +27,26 @@
         </div>
     @endif
 
-    @foreach ($manuals as $manual)
-        @if ($manual->locally_available)
-            <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-            ({{$manual->filesize_human_readable}})
-            <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" class="btn btn-primary btn-sm" style="margin-left: 10px;">View</a>
-        @else
-            <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" class="btn btn-primary btn-sm" style="margin-left: 10px;">View</a>
-            <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-        @endif
-        <span> - Views: {{ $manual->views }}</span>
-        <br />
-    @endforeach
+
+
+    <div class="manuals-grid">
+        @foreach ($manuals as $manual)
+            <div class="manual-card">
+                <div class="manual-title">{{ $manual->name }}</div>
+                <div class="manual-meta">
+                    <span>{{ $manual->filesize_human_readable }}</span>
+                    <span>Views: {{ $manual->views }}</span>
+                </div>
+                <div class="manual-actions">
+                    @if ($manual->locally_available)
+                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" class="btn btn-primary btn-sm">View</a>
+                    @else
+                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" class="btn btn-primary btn-sm">View</a>
+                        <a href="{{ $manual->url }}" target="_blank" class="btn btn-outline-secondary btn-sm">Extern</a>
+                    @endif
+                </div>
+            </div>
+        @endforeach
+    </div>
 
 </x-layouts.app>
