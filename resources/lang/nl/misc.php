@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 return [
 
@@ -22,5 +22,11 @@ return [
 'view_manual' => "Bekijk direct je handleiding",
 'view_manual_alt' => "Bekijk direct je handleiding",
 'all_brands' => "Alle merken",
+'contact' => "Contact",
+'contact_intro' => "Neem contact met ons op via het onderstaande formulier.",
+'name' => "Naam",
+'email' => "E-mail",
+'message' => "Bericht",
+'send' => "Verstuur",
 
 ];

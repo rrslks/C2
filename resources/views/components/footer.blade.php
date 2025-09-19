@@ -1,6 +1,5 @@
 <footer>
-    © {{ __('misc.copyright') }}
-    <br>
+	© {{ __('misc.copyright') }}
 </footer>
 
 

@@ -5,7 +5,7 @@
 -- Host: localhost:3306
 -- Generation Time: Jul 01, 2024 at 10:55 AM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+--PHP Version: 8.1.10
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `4s_manuals`
+--Database: `4S_manuals`
 --
 
 -- --------------------------------------------------------
 
 --
--- Dumping data for table `brands`
+--Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -76,7 +76,7 @@ INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Dumping data for table `manuals`
+--Dumping data for table `manuals`
 --
 
 INSERT INTO `manuals` (`id`, `brand_id`, `name`, `filesize`, `originUrl`, `filename`, `downloadedServer`, `created_at`, `updated_at`) VALUES

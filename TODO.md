@@ -1,0 +1,3 @@
+- [x] Identify issue: view uses undefined $type causing error, preventing increment
+- [x] Fix view: replace $type->name with $manual->name, fix breadcrumb
+- [ ] Test: Run app and check if views increment on manual view

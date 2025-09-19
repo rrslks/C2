@@ -17,6 +17,7 @@ class ManualController extends Controller
         // Increment the views counter
         Log::info('Views before increment: ' . $manual->views);
         $manual->increment('views');
+        $manual->refresh(); // Refresh the model to get updated values
         Log::info('Views after increment: ' . $manual->views);
 
         return view('pages/manual_view', [
