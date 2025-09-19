@@ -19,7 +19,20 @@
     $columns = 3;
     $chunk_size = ceil($size / $columns);
     ?>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Top 10 viewed manuals</h2>
+                <ul>
+                    @foreach ($top10manuals as $manual)
+                        <li>
+                            <h2>{{ $manual->brand->name }}: {{ $manual->name }}</h2>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
@@ -34,10 +47,10 @@
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
                                 echo '</ul>
-                                                                                                                                            						<h2>' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                						<h2>' .
                                     $current_first_letter .
                                     '</h2>
-                                                                                                                                            						<ul>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                						<ul>';
                             }
                             $header_first_letter = $current_first_letter;
                             ?>
