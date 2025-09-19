@@ -4820,6 +4820,21 @@ a.badge-dark:focus, a.badge-dark.focus {
     background-color: #e9ecef;
     border-radius: 0.3rem;
 }
+
+.jumbotron button{
+    background-color: #3490dc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
 @media (min-width: 576px) {
     .jumbotron {
         padding: 4rem 2rem;
