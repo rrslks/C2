@@ -33,6 +33,7 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Models\Manual;
 
 // Homepage
 Route::get('/', function () {
