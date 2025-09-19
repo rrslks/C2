@@ -33,12 +33,17 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Models\Manual;
 
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
     $name = 'George';
-    return view('pages.homepage', compact('brands', 'name'));
+    $top10manuals = Manual::with(['brand'])
+        ->orderBy('views', 'desc')
+        ->take(10)
+        ->get();
+    return view('pages.homepage', compact('brands', 'name', 'top10manuals'));
 })->name('home');
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);

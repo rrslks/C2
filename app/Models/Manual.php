@@ -10,19 +10,20 @@ class Manual extends Model
     use HasFactory;
 
     // Returns the filesize in a human readable format
-    public function getFilesizeHumanReadableAttribute(){
+    public function getFilesizeHumanReadableAttribute()
+    {
 
         $size = $this->filesize;
         $unit = "";
 
-        if( (!$unit && $size >= 1<<30) || $unit == "GB")
-            $value = number_format($size/(1<<30),2)."GB";
-        elseif( (!$unit && $size >= 1<<20) || $unit == "MB")
-            $value = number_format($size/(1<<20),2)."MB";
-        elseif( (!$unit && $size >= 1<<10) || $unit == "KB")
-            $value = number_format($size/(1<<10),2)."KB";
+        if ((!$unit && $size >= 1 << 30) || $unit == "GB")
+            $value = number_format($size / (1 << 30), 2) . "GB";
+        elseif ((!$unit && $size >= 1 << 20) || $unit == "MB")
+            $value = number_format($size / (1 << 20), 2) . "MB";
+        elseif ((!$unit && $size >= 1 << 10) || $unit == "KB")
+            $value = number_format($size / (1 << 10), 2) . "KB";
         else
-            $value = number_format($size)." bytes";
+            $value = number_format($size) . " bytes";
 
         return $value;
     }
@@ -52,5 +53,10 @@ class Manual extends Model
             $url = $originUrl;
 
         return $url; */
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
     }
 }
