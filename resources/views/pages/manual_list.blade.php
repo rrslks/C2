@@ -16,7 +16,7 @@
 
     @if(isset($top5Manuals) && $top5Manuals->count())
         <div style="margin-bottom: 20px;">
-            <h2>Top 5 manuals of this brand</h2>
+            <h2>{{ __('introduction_texts.top_5_manuals_of_brand') }}</h2>
             <ol>
                 @foreach($top5Manuals as $manual)
                     <li>

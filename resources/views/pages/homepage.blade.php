@@ -50,7 +50,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Top 10 viewed manuals</h2>
+                <h2>{{ __('introduction_texts.top_10_viewed_manuals') }}</h2>
                 <ul>
                     @foreach ($top10manuals as $manual)
                         <li>
