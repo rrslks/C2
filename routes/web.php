@@ -39,7 +39,7 @@ use App\Models\Manual;
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
-    $name = 'George';
+    $name = '';
     $top10manuals = Manual::with(['brand'])
         ->orderBy('views', 'desc')
         ->take(10)
