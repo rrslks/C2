@@ -13,10 +13,38 @@
         </x-slot:title>
     </h1>
 
+    <!-- Alphabetical Navigation Menu -->
+    <div class="container">
+        <div class="alphabet-nav">
+            <h3>{{ __('misc.browse_by_letter') }}</h3>
+            <div class="alphabet-nav-buttons">
+                <?php
+                // Get all first letters that have brands
+                $availableLetters = [];
+                foreach ($brands as $brand) {
+                    $firstLetter = strtoupper(substr($brand->name, 0, 1));
+                    if (!in_array($firstLetter, $availableLetters)) {
+                        $availableLetters[] = $firstLetter;
+                    }
+                }
+                sort($availableLetters);
+
+                // Generate A-Z buttons, only showing letters that have brands
+                foreach (range('A', 'Z') as $letter) {
+                    if (in_array($letter, $availableLetters)) {
+                        echo '<a href="#letter-' . $letter . '" class="alphabet-btn">' . $letter . '</a>';
+                    } else {
+                        echo '<span class="alphabet-btn disabled">' . $letter . '</span>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 
     <?php
     $size = count($brands);
-    $columns = 3;
+    $columns = 1; // Changed from 3 to 1 column for less crowded layout
     $chunk_size = ceil($size / $columns);
     ?>
     <div class="container">
@@ -34,40 +62,28 @@
         </div>
     </div>
     <div class="container">
-        <!-- Example row of columns -->
+        <!-- Single column layout for less crowded brands list -->
         <div class="row">
+            <div class="col-12">
+                <ul class="brands-list">
+                    @foreach ($brands as $brand)
+                        <?php
+                        $current_first_letter = strtoupper(substr($brand->name, 0, 1));
 
-            @foreach ($brands->chunk($chunk_size) as $chunk)
-                <div class="col-md-4">
+                        if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
+                            echo '<h2 id="letter-' . $current_first_letter . '" class="brand-letter-header">' . $current_first_letter . '</h2>';
+                        }
+                        $header_first_letter = $current_first_letter;
+                        ?>
 
-                    <ul>
-                        @foreach ($chunk as $brand)
-                            <?php
-                            $current_first_letter = strtoupper(substr($brand->name, 0, 1));
-
-                            if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
-                                echo '</ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                						<h2>' .
-                                    $current_first_letter .
-                                    '</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                						<ul>';
-                            }
-                            $header_first_letter = $current_first_letter;
-                            ?>
-
-                            <li>
-                                <a
-                                    href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">{{ $brand->name }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-
-                </div>
-                <?php
-                unset($header_first_letter);
-                ?>
-            @endforeach
-
+                        <li class="brand-item">
+                            <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/" class="brand-link">
+                                {{ $brand->name }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
     {{ $name }}

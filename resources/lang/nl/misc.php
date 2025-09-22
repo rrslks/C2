@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 return [
 
@@ -28,5 +28,6 @@ return [
 'email' => "E-mail",
 'message' => "Bericht",
 'send' => "Verstuur",
+'browse_by_letter' => "Blader op letter",
 
 ];
