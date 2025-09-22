@@ -21,5 +21,6 @@ return [
     'manual_list' => "Hier kunt u alle handleidingen en gebruikersgidsen voor de :brand :type vinden. Klik op de onderstaande links om de handleiding te bekijken of te downloaden.",
     'top_10_viewed_manuals' => "Top 10 meest bekeken handleidingen",
     'top_5_manuals_of_brand' => "Top 5 meest bekeken handleidingen van dit merk",
+    'letter_page_intro' => "Bekijk alle merken beginnend met :letter. Klik op een merk om de handleidingen en gebruikersgidsen te bekijken.",
 
 ];

@@ -32,7 +32,7 @@
                 // Generate A-Z buttons, only showing letters that have brands
                 foreach (range('A', 'Z') as $letter) {
                     if (in_array($letter, $availableLetters)) {
-                        echo '<a href="#letter-' . $letter . '" class="alphabet-btn">' . $letter . '</a>';
+                        echo '<a href="/' . $letter . '" class="alphabet-btn">' . $letter . '</a>';
                     } else {
                         echo '<span class="alphabet-btn disabled">' . $letter . '</span>';
                     }

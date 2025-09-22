@@ -55,6 +55,11 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
+// Letter-based brand pages for SEO
+Route::get('/{letter}', [BrandController::class, 'showByLetter'])
+    ->where('letter', '[A-Z]')
+    ->name('brands.letter');
+
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
