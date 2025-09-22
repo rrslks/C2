@@ -23,5 +23,11 @@ return [
 'view_manual_alt' => "Directly view your manual",
 'all_brands' => "All brands",
 'browse_by_letter' => "Browse by letter",
+'contact' => "Contact",
+'contact_intro' => "Contact us using the form below.",
+'name' => "Name",
+'email' => "Email",
+'message' => "Message",
+'send' => "Send",
 
 ];
