@@ -29,5 +29,8 @@ return [
 'message' => "Bericht",
 'send' => "Verstuur",
 'browse_by_letter' => "Blader op letter",
+'brands_starting_with_letter' => "Merken beginnend met :letter",
+'no_brands_starting_with_letter' => "Geen merken gevonden beginnend met :letter",
+'browse_other_letters' => "Probeer andere letters om het merk te vinden waar je naar op zoek bent.",
 
 ];

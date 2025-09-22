@@ -29,5 +29,8 @@ return [
 'email' => "Email",
 'message' => "Message",
 'send' => "Send",
+'brands_starting_with_letter' => "Brands starting with :letter",
+'no_brands_starting_with_letter' => "No brands found starting with :letter",
+'browse_other_letters' => "Try browsing other letters to find the brand you're looking for.",
 
 ];

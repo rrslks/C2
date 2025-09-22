@@ -21,5 +21,6 @@ return [
     'manual_list' => "Here you can find your manual(s) and user guide(s) for the :brand :type. Click on the links below to view or download your manual.",
     'top_10_viewed_manuals' => "Top 10 viewed manuals",
     'top_5_manuals_of_brand' => "Top 5 viewed manuals of this brand",
+    'letter_page_intro' => "Browse all brands starting with :letter. Click on a brand to view its manuals and user guides.",
 
 ];
