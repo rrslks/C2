@@ -35,6 +35,8 @@ use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ContactController;
 use App\Models\Manual;
+use App\Http\Controllers\CategoryController;
+
 
 // Homepage
 Route::get('/', function () {
@@ -72,3 +74,5 @@ Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
 // Contact page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store']);
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
