@@ -7,9 +7,8 @@
         @foreach ($brands as $brand)
             @if ($brand->category_id === $category->id)
                 <div class="brand-card">
-                    <a href="/categories/{{ $category->slug }}/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/"
-                        alt="Manuals for '{{ $brand->name }}'" title="Manuals for '{{ $brand->name }}'">
-                        <div class="brand-name">{{ $brand->name }}</div>
+                    <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/" class="brand-link">
+                        {{ $brand->name }}
                     </a>
                 </div>
             @endif
